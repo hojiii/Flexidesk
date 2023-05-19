@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import {
-  __addReservation,
-  __getUserData,
-} from '../../redux/modules/reservationSlice';
+import React from 'react';
+
 import { useReservationTime } from '../../hooks/reservation/useReservationTime';
 
-import { cookies } from '../../shared/cookies';
 import { Input } from '../../components/Input';
 import { Column } from '../../components/Flex';
 import IconTitle from '../../components/IconTitle';
@@ -22,7 +17,7 @@ import {
   CheckContainBox,
 } from '../../pages/reservation/ReservationAllStyle';
 import ReservationCheck from './ReservationCheck';
-import { useReservatiionHandler } from '../../hooks/reservation/useReservatiionHandler';
+import { useReservationHandler } from '../../hooks/reservation/useReservationHandler';
 
 function ReservationTime({ param, selectDay, mrName }) {
   // const [userInfo, setUserInfo] = useState([]);
@@ -46,7 +41,7 @@ function ReservationTime({ param, selectDay, mrName }) {
     onSubmitHandler,
     onChangeHandler,
     userInfo,
-  } = useReservatiionHandler(
+  } = useReservationHandler(
     clickReservation,
     setClickReservation,
     userIdInfo,
@@ -55,52 +50,6 @@ function ReservationTime({ param, selectDay, mrName }) {
     param,
     selectDay,
   );
-  // const dispatch = useDispatch()
-  // const [clickReservation, setClickReservation] = useState([]);
-  // const now = new Date();
-
-  // const date = `${now.getFullYear()}-${(now.getMonth() + 1)
-  //   .toString()
-  //   .padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}T`;
-  // const [isCheckOut, setIsCheckOut] = useState('false');
-  // let reqData = [];
-
-  // const dataList = () => {
-  //   clickReservation.map((_, index) => {
-  //     reqData.push({ start: clickReservation[index] });
-  //   });
-  //   return reqData;
-  // };
-
-  // const onclickHandler = e => {
-  //   if (clickReservation.find(item => item === e.target.value)) {
-  //     setClickReservation(
-  //       clickReservation.filter(item => item !== e.target.value),
-  //     );
-  //   } else {
-  //     setClickReservation([...clickReservation, e.target.value]);
-  //   }
-  //   setIsCheckOut(!isCheckOut);
-  // };
-
-  // useEffect(() => {
-  //   if (selectDay) {
-  //     dispatch(__getReservation({ param, selectDay }));
-  //   } else {
-  //     dispatch(
-  //       __getReservation({
-  //         param,
-  //         selectDay: date.slice(0, -1),
-  //       }),
-  //     );
-  //   }
-  //   setClickReservation([]);
-  // }, [selectDay]);
-
-  // const { userData } = useSelector(state => state.reservation);
-  // const { reservation } = useSelector(state => state.reservation);
-  // const reqDatas = { startList: dataList(), userList: userIdInfo };
-  // const { timeList } = reservation;
 
   return (
     <SchContain width="683px">

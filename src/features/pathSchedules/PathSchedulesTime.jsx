@@ -22,7 +22,6 @@ function PathSchedulesTime({
   initDate,
 }) {
   const {
-    onClickHandler,
     clickSchedules,
     reqScheduleValue,
     scheduleValue,
@@ -32,15 +31,16 @@ function PathSchedulesTime({
   const { schedules } = useSelector(state => state.schedules);
 
   const dispatchValue = __pathScehdule;
-  const { onSubmitHandler, onChangeHandler } = useSchedulesHandler(
-    reqScheduleValue,
-    param,
-    setScheduleValue,
-    dispatchValue,
-    setClickSchedules,
-    clickSchedules,
-    scId,
-  );
+  const { onSubmitHandler, onChangeHandler, onClickHandler } =
+    useSchedulesHandler(
+      reqScheduleValue,
+      param,
+      setScheduleValue,
+      dispatchValue,
+      setClickSchedules,
+      clickSchedules,
+      scId,
+    );
 
   return (
     <SchContain width="383px">

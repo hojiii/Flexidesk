@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getCookie } from "../../shared/cookies";
 import { __addReservation,__getUserData } from "../../redux/modules/reservationSlice";
 
-export const useReservatiionHandler = (clickReservation,setClickReservation,userIdInfo,setUserIdInfo,reqDatas, param, selectDay ) => {
+export const useReservationHandler = (clickReservation,setClickReservation,userIdInfo,setUserIdInfo,reqDatas, param, selectDay ) => {
 const [isCheckOut, setIsCheckOut] = useState('false');
 const [userInfo, setUserInfo] = useState([]);
 const navi = useNavigate();
